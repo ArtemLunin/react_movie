@@ -1,6 +1,7 @@
 import React from "react";
 import { moviesData } from "../moviesData";
 import MovieItem from "./MovieItem";
+import { API_URL, API_KEY_3 } from "../utils/api";
 
 // UI = fn(state, props)
 
@@ -14,6 +15,10 @@ class App extends React.Component {
       movies: [],
       moviesWillWatch: []
     };
+  }
+
+  componentDidMount() {
+    fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}`);
   }
 
   deleteMovie = movie => {
@@ -47,7 +52,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log("render", this);
     return (
       <div className="container">
         <div className="row mt-4">
