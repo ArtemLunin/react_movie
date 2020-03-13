@@ -30,6 +30,7 @@ class App extends React.Component {
           movies: data.results
         });
       });
+    //
   }
 
   deleteMovie = movie => {
